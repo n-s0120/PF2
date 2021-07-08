@@ -24,7 +24,7 @@
 
 ## 設計書
 ### ワイヤーフレーム
-
+https://www.figma.com/file/wNRcjF4KkO97Luyto7NaEg/Gyo_tetsu?node-id=0%3A1
 
 ### テーブル定義書
 
