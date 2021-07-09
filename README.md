@@ -1,7 +1,7 @@
 # Gyo_tetsu
 
 ## サイト概要
-建設業の許可や車庫証明、飲食業許可などの各行政手続きをフローチャート化し、自力で手続きを行えるように援助するサイトです。
+建設業の許可や、飲食業許可などの各行政手続きをフローチャート化し、自力で手続きを行えるように援助するサイトです。
 このサイトには、以下の機能が実装されています。
 * 行政手続きに必要なものがわかるフローチャート
 * ユーザーのオススメサイトをシェアできるインデックス機能
@@ -27,7 +27,7 @@
 https://www.figma.com/file/wNRcjF4KkO97Luyto7NaEg/Gyo_tetsu?node-id=0%3A1
 
 ### テーブル定義書
-
+https://docs.google.com/spreadsheets/d/1fc9g6Q4zrKZzztOAh1XsLZYVp_JDSjiO/edit#gid=1965684060
 
 ### ER図
 
