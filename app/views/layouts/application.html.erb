@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render partial: 'layouts/login_user_header' %>
+    <% else %>
+      <%= render partial: 'layouts/no_login_user_header' %>
+    <% end %>
+
     <%= yield %>
+
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>
