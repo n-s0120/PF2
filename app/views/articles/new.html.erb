@@ -1,0 +1,17 @@
+記事投稿画面
+
+<%= form_with model: @article, local: true do |f| %>
+  <%= f.label :記事タイトル %>
+  <%= f.text_field :title%>
+
+  <%= f.label :ページアドレス %>
+  <%= f.text_field :url %>
+
+  <%= f.label :記事紹介 %>
+  <%= f.text_area :introduction %>
+
+  <%= f.label :タグ %>
+  <%= f.text_area :introduction %>
+
+  <%= f.submit "投稿" %>
+<% end %>

@@ -1,0 +1,26 @@
+オススメ記事詳細画面
+
+記事タイトル
+<%= @article.title %>
+
+URL：<%= @article.url %>
+
+記事の紹介文
+<%= @article.introduction %>
+
+タグ
+<タグを入れる>
+
+<div class="comments">
+  <% @article.comments.each do |comment| %>
+    ユーザー名：<%= comment.user.name %>
+    <%= comment.comment %>
+  <% end %>
+</div>
+
+<div class="new_comments">
+  <%= form_with(model:[@article, @comment], local: true) do |f| %>
+    <%= f.text_area :comment, rows:5, placeholder: "記事への感想を入力してください" %>
+    <%= f.submit "コメントする" %>
+  <% end %>
+</div>

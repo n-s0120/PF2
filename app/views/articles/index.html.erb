@@ -1,0 +1,37 @@
+<% if user_signed_in? %>
+  <%= link_to "記事を投稿する", new_article_path %>
+<% end %>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ユーザー名</th>
+      <th>記事タイトル</th>
+      <th>記事紹介文</th>
+      <th>コメント数</th>
+      <th>いいね数</th>
+    </tr>
+  </thead>
+
+  <% @articles.each do |article| %>
+  <tbody>
+    <tr>
+      <td><%= article.user.email %></td>
+      <td><%= article.title %></td>
+      <td><%= article.introduction %></td>
+      <td>
+        <% if article.favorited_by?(current_user) %>
+          <%= link_to article_favorites_path(article), method: :delete do %>
+            ♥<%= article.favorites.count %>
+          <% end %>
+        <% else %>
+          <%= link_to article_favorites_path(article), method: :post do %>
+            ♡<%= article.favorites.count %>
+          <% end %>
+        <% end %>
+      </td>
+      <td>お</td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
