@@ -1,21 +1,35 @@
 オススメ記事詳細画面
+<br>
 
 記事タイトル
 <%= @article.title %>
+<br>
 
-URL：<%= @article.url %>
+<!--リンク先を新しいタブで開けるようにして、遷移先で元タブを書き換えられないようにする-->
+URL：<a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%= @article.url %></a>
+<br>
 
 記事の紹介文
 <%= @article.introduction %>
+<br>
 
 タグ
 <タグを入れる>
 
 <div class="comments">
-  <% @article.comments.each do |comment| %>
-    ユーザー名：<%= comment.user.name %>
-    <%= comment.comment %>
-  <% end %>
+  <table>
+    <thead>
+      <th>ユーザー名</th>
+      <th>コメント</th>
+    </thead>
+
+    <% @article.comments.each do |comment| %>
+      <tbody>
+        <td><%= comment.user.email %></td>
+        <td><%= comment.comment %></td>
+      </tbody>
+    <% end %>
+  </table>
 </div>
 
 <div class="new_comments">
