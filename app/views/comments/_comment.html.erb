@@ -1,0 +1,9 @@
+<% article.comments.each do |comment| %>
+  <tbody>
+    <td><%= comment.user.email %></td>
+    <td><%= comment.comment %></td>
+    <% if comment.user == current_user %>
+      <td><%= link_to "削除", article_comment_path(comment.article, comment), method: :delete, remote: true %></td>
+    <% end %>
+  </tbody>
+<% end %>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="col-xs-12">
+    <% if @model == "article" %>
+      <h2>Articles search for '<%= @value %>'</h2>
+      <table class="table">
+          <thead>
+              <tr>
+                <th>Name</th>
+                <th>Introduction</th>
+              </tr>
+          </thead>
+      <% @datas.each do |article| %>
+          <tbody>
+              <tr>
+                <th>
+                    <%= article.user.email %>
+                </th>
+                <th>
+                    <%= article.title %>
+                </th>
+              </tr>
+          </tbody>
+      <% end %>
+    <% elsif @model == "flow" %>
+      <h2>Flow search for '<%= @value %>'</h2>
+      <table class="table">
+        <thead>
+            <tr>
+              <th>Title</th>
+              <th>Opinion</th>
+            </tr>
+        </thead>
+        <% @datas.each do |flow| %>
+        <tbody>
+            <tr>
+              <th>
+                  <%= フローチャート %>
+              </th>
+              <th>
+                  <%= フローチャート %>
+              </th>
+            </tr>
+        </tbody>
+        <% end %>
+    <% end %>
+      </table>
+  </div>
+</div>

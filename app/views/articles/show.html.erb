@@ -21,20 +21,15 @@ URL：<a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%=
     <thead>
       <th>ユーザー名</th>
       <th>コメント</th>
+      <th>削除ボタン</th>
     </thead>
 
-    <% @article.comments.each do |comment| %>
-      <tbody>
-        <td><%= comment.user.email %></td>
-        <td><%= comment.comment %></td>
-      </tbody>
-    <% end %>
+    <div id="comments_area">
+      <%= render partial: 'comments/comment', locals: {article: @article} %>
+    </div>
   </table>
 </div>
 
-<div class="new_comments">
-  <%= form_with(model:[@article, @comment], local: true) do |f| %>
-    <%= f.text_area :comment, rows:5, placeholder: "記事への感想を入力してください" %>
-    <%= f.submit "コメントする" %>
-  <% end %>
+<div id="comments_area">
+  <%= render partial: 'comments/form', locals: {comment: @comment, article: @article} %>
 </div>

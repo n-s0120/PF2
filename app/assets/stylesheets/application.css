@@ -40,14 +40,9 @@
   margin-top: 30px;
 }
 
-.search_area_article {
+.search_area {
   display: flex;
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-
-.search_area_flow {
-  display: flex;
-  justify-content: center;
 }
