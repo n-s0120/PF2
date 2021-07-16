@@ -14,7 +14,7 @@ URL：<a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%=
 <br>
 
 タグ
-<タグを入れる>
+<%= render 'tag_list', tag_list: @article.tag_list %>
 
 <div class="comments">
   <table>

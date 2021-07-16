@@ -7,4 +7,6 @@ class Article < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+
+  acts_as_taggable
 end

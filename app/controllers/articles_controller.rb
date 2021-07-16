@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    #tagを押したとき、同じタグが付いているもののみを表示
+    if params[:tag_name]
+      @articles = Article.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def show
@@ -31,6 +35,10 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :introduction, :url)
+    params.require(:article).permit(:title, :introduction, :url, :tag_list)
+  end
+
+  def sort_params
+    params.permit(:sort)
   end
 end

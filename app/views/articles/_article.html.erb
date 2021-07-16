@@ -1,8 +1,9 @@
   <tbody>
     <tr id='article_<%= article.id %>'>
-      <td><%= article.user.email %></td>
+      <td><%= article.user.name %></td>
       <td><%= article.title %></td>
       <td><%= article.introduction %></td>
+      <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
       <td>コメント数</td>
       <% if user_signed_in? %>
       <td>
@@ -15,5 +16,6 @@
       <% end %>
       <td><%= article.favorites.count %></td>
       <td><%= link_to "詳細", article_path(article) %></td>
+      <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
     </tr>
   </tbody>
