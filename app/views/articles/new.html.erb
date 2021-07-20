@@ -1,4 +1,4 @@
-記事投稿画面
+フローチャート作成画面
 
 <%= form_with model: @article, local: true do |f| %>
   <div class="form_group">
@@ -7,18 +7,14 @@
   </div>
 
   <div class="form_group">
-    <%= f.label :ページアドレス %>
-    <%= f.text_field :url %>
+    <%= f.label :フローチャートの内容 %>
+    <%= f.text_field :introduction %>
   </div>
 
   <div class="form_group">
-    <%= f.label :記事紹介 %>
-    <%= f.text_area :introduction %>
+    <%= f.label :手続き場所 %>
+    <%= f.text_area :place %>
   </div>
-
-  <div class="form_group">
-    <%= f.label :タグ %>
-    <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
   </div>
 
   <div class="form_group">

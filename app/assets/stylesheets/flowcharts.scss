@@ -1,13 +1,10 @@
-// Place all the styles related to the Flowcharts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .tab-area {
   display: flex;
   justify-content: space-around;
   background-color: #222e3e;
   cursor: pointer;
   .tab {
-    width: 300px;
+    width: 303px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -31,4 +28,12 @@
     margin-top: 50px;
     display: block;
   }
+}
+
+table {
+  width: 100%;
+}
+
+.contet.show td {
+  width: 25%;
 }
