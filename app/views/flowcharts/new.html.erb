@@ -1,0 +1,25 @@
+<%= form_with model: @flowchart, local: true do |f| %>
+  <div class="form_group">
+    <%= f.label :記事タイトル %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :ページアドレス %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :記事紹介 %>
+    <%= f.text_area :introduction %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :タグ %>
+    <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
+  </div>
+
+  <div class="form_group">
+    <%= f.submit "投稿" %>
+  </div>
+<% end %>
