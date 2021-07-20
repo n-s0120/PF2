@@ -2,8 +2,10 @@
   <tbody>
     <td><%= comment.user.name %></td>
     <td><%= comment.comment %></td>
+    <td>
     <% if comment.user == current_user %>
-      <td><%= link_to "削除", article_comment_path(comment.article, comment), method: :delete, remote: true %></td>
+      <%= link_to "削除", article_comment_path(comment.article, comment), method: :delete %>
     <% end %>
+    </td>
   </tbody>
 <% end %>

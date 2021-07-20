@@ -1,4 +1,6 @@
 <script src="javascripts/flowchart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.css">
+<script src="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.js"></script>
 <% if admin_signed_in? %>
   <%= link_to "フローチャート追加", new_flowchart_path %>
 <% end %>
@@ -25,7 +27,8 @@
 </div>
 <div class="content-area">
   <div class="content show">
-    フローチャートのタイトル１
+    <div class="create-flowy">The block to be dragged</div>
+    <div id="canvas"></div>
   </div>
   <div class="content">
     フローチャートのタイトル２
@@ -97,6 +100,7 @@
           <td><a href= https://www.city.bunkyo.lg.jp/hoken/seikatsueisei/syokuhin/shinsei/kyokatou.html>文京区</a></td>
           <td><a href= https://www.city.minato.tokyo.jp/shokuhinkouiki/kuse/egyokyoka/tetsuzuki/shokuhin.html>港区</a></td>
           <td><a href= https://www.city.meguro.tokyo.jp/kurashi/hoken_eisei/kankeisha/shinkieigyou.html>目黒区</a></td>
+          <td></td>
         </tr>
       </tbody>
     </table>

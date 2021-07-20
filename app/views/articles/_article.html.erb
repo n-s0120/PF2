@@ -4,7 +4,7 @@
       <td><%= article.title %></td>
       <td><%= article.introduction %></td>
       <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
-      <td>コメント数</td>
+      <td><%= article.comments.count %></td>
       <% if user_signed_in? %>
       <td>
         <% if article.favorited_by?(current_user) %>
