@@ -14,22 +14,22 @@ URL：<a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%=
 <br>
 
 タグ
-<%= render 'tag_list', tag_list: @article.tag_list %>
+<td><%= render 'favorites/tag_list', tag_list: @article.tag_list %></td>
 
 <div class="comments">
-  <table>
+  <table border="1">
     <thead>
       <th>ユーザー名</th>
       <th>コメント</th>
       <th>削除ボタン</th>
     </thead>
 
-    <div id="comments_area">
-      <%= render partial: 'comments/comment', locals: {article: @article} %>
-    </div>
+      <div id="comments_area">
+        <%= render partial: 'comments/comment', locals: {article: @article} %>
+      </div>
   </table>
 </div>
 
 <div id="comments_area">
-  <%= render partial: 'comments/form', locals: {comment: @comment, article: @article} %>
+  <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
 </div>
