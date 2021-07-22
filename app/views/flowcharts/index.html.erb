@@ -1,6 +1,4 @@
-<script src="javascripts/flowchart.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.css">
-<script src="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.js"></script>
+<script src="assets/javascripts/flowchart.js"></script>
 <% if admin_signed_in? %>
   <%= link_to "フローチャート追加", new_flowchart_path %>
 <% end %>
@@ -26,9 +24,10 @@
   </div>
 </div>
 <div class="content-area">
-  <div class="content show">
-    <div class="create-flowy">The block to be dragged</div>
-    <div id="canvas"></div>
+  <div class="content">
+    <% @flowcharts.each do |flowchart| %>
+      <%= flowchart.title %>
+    <% end %>
   </div>
   <div class="content">
     フローチャートのタイトル２

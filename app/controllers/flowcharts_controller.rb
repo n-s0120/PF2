@@ -10,6 +10,7 @@ class FlowchartsController < ApplicationController
   end
 
   def index
+    @flowcharts = Flowchart.all
   end
 
   def show
@@ -21,6 +22,6 @@ class FlowchartsController < ApplicationController
 
   private
   def flowchart_params
-    params.require(:flowchart).permit(:title, :introduction, :place)
+    params.require(:flowchart).permit(:title, :genre, :introduction)
   end
 end
