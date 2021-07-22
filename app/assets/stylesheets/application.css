@@ -18,7 +18,6 @@
   display: flex;
   justify-content: flex-end;
   border-bottom: 1px solid black;
-  margin-bottom: 30px;
 }
 
 .botton {
@@ -30,19 +29,12 @@
   display: flex;
   justify-content: center;
   font-size: 50px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .footer {
   display: flex;
   justify-content: center;
   border-top: 1px solid black;
-  margin-top: 30px;
-}
-
-.search_area {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
 }
