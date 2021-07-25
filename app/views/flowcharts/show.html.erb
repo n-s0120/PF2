@@ -1,9 +1,9 @@
-<%= @flowchart.title %>
-<br>
-
-i = 0
-while i < flowchart.introduction.size
-puts flowchart.introduction[i]
-↓
-i += 1
-end
+<!--flowchartで入力した文章を、フローチャート調にループ処理で表示させる-->
+<% i = 0 %>
+<% while i < @flowchart_introductions.size - 1 %>
+    <%= @flowchart_introductions[i] %><br>
+    ↓
+    <% i += 1 %><br>
+<% end %>
+<!--flowchartのintroductionに入れた配列の最後のみ、矢印をなくすためにループを脱して、単体で表示させる-->
+<%= @flowchart_introductions[@flowchart_introductions.size - 1] %>

@@ -30,10 +30,42 @@
   }
 }
 
+.tokyo_tab-area {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222e3e;
+  cursor: pointer;
+  .tokyo_tab {
+    width: 303px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    border-right: 1px solid #50637b;
+    border-left: 1px solid #222e3e;
+  }
+  .tokyo_tab.tokyo_active {
+    background-color: #ccc;
+    color: #222e3e;
+    border: none;
+  }
+}
+.tokyo_content-area {
+  font-size: 30px;
+  text-align: center;
+  .tokyo_content {
+    display: none;
+  }
+  .tokyo_content.show {
+    margin-top: 50px;
+    display: block;
+  }
+}
+
 table {
   width: 100%;
 }
 
-.contet.show td {
+.content.show td {
   width: 25%;
 }

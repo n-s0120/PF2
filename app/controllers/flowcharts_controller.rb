@@ -4,21 +4,23 @@ class FlowchartsController < ApplicationController
   end
 
   def create
-    @flowchart = Flowchart.new(flowchart_params)
-    @flowchart.save
+    @flowchart = current_admin.flowcharts.new(flowchart_params)
+    @flowchart.save!
     redirect_to flowcharts_path
   end
 
   def index
-    @flowchart_1 = Flowchart.where(genre: "飲食業")
-    @flowchart_2 = Flowchart.where(genre: "風営法")
-    @flowchart_3 = Flowchart.where(genre: "建設業法")
-    @flowchart_4 = Flowchart.where(genre: "入管法")
-    @flowchart_5 = Flowchart.where(genre: "その他")
+    @flowchart_restaurant = Flowchart.where(genre: "飲食業")
+    @flowchart_amusement = Flowchart.where(genre: "風営法")
+    @flowchart_construction = Flowchart.where(genre: "建設業法")
+    @flowchart_immigration = Flowchart.where(genre: "入管法")
+    @flowchart_other = Flowchart.where(genre: "その他")
   end
 
   def show
     @flowchart = Flowchart.find(params[:id])
+    # @flowchartでflowchartのデータを探し出し、そのうちのintroductionカラムを"→"の部分で分割し、配列化して取得する
+    @flowchart_introductions = @flowchart[:introduction].split("→")
   end
 
   def destroy

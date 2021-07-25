@@ -11,16 +11,16 @@ class SearchesController < ApplicationController
   def match(model, value)
     if model == 'article'
       Article.where(title: value)
-    elsif model == 'flow'
-      Flow.where(title: value)
+    elsif model == 'flowchart'
+      Flowchart.where(title: value)
     end
   end
 
   def partical(model, value)
     if model == 'article'
       Article.where("name LIKE ?", "%#{value}%")
-    elsif model == 'flow'
-      Flow.where("title LIKE ?", "%#{value}%")
+    elsif model == 'flowchart'
+      Flowchart.where("title LIKE ?", "%#{value}%")
     end
   end
 

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-xs-12">
     <% if @model == "article" %>
-      <h2>Articles search for '<%= @value %>'</h2>
+      <h2>オススメ記事 検索結果 '<%= @value %>'</h2>
       <table border="1">
           <thead>
               <tr>
@@ -42,23 +42,19 @@
           </tbody>
       <% end %>
       </table>
-    <% elsif @model == "flow" %>
-      <h2>Flow search for '<%= @value %>'</h2>
-      <table class="table">
+    <% elsif @model == "flowchart" %>
+      <h2>フローチャート 検索結果 '<%= @value %>'</h2>
+      <table border="1">
         <thead>
             <tr>
-              <th>Title</th>
-              <th>Opinion</th>
+              <th>タイトル</th>
             </tr>
         </thead>
-        <% @datas.each do |flow| %>
+        <% @datas.each do |flowchart| %>
         <tbody>
             <tr>
               <th>
-                  <%= フローチャート %>
-              </th>
-              <th>
-                  <%= フローチャート %>
+                <%= link_to "#{flowchart.title}", flowchart_path(flowchart) %>
               </th>
             </tr>
         </tbody>
