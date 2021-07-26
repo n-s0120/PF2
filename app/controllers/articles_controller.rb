@@ -13,20 +13,19 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles_new = Article.all.order(created_at: :desc)
-    @articles_new = Kaminari.paginate_array(@articles_new).page(params[:page])
+    @articles_new = Article.all.order(created_at: :desc).page(params[:page])
     # tagを押したとき、同じタグが付いているもののみを表示
-    @articles_new = Article.tagged_with(params[:tag_name].to_s) if params[:tag_name]
+    @articles_new = Article.tagged_with(params[:tag_name].to_s).page(params[:page]) if params[:tag_name]
   end
 
   def index_favorite
-    @articles_favorite = Article.includes(:favorites).sort { |a, b| b.favorites.count <=> a.favorites.count }.page(params[:page])
-    @articles_favorite = Article.tagged_with(params[:tag_name].to_s) if params[:tag_name]
+    @articles_favorite = Kaminari.paginate_array(Article.includes(:favorites).sort { |a, b| b.favorites.count <=> a.favorites.count }).page(params[:page])
+    @articles_favorite = Kaminari.paginate_array(Article.tagged_with(params[:tag_name].to_s).includes(:favorites).sort { |a, b| b.favorites.count <=> a.favorites.count }).page(params[:page]) if params[:tag_name]
   end
 
   def index_comment
-    @articles_comment = Article.includes(:comments).sort { |a, b| b.comments.count <=> a.comments.count }.page(params[:page])
-    @articles_comment = Article.tagged_with(params[:tag_name].to_s) if params[:tag_name]
+    @articles_comment = Kaminari.paginate_array(Article.includes(:comments).sort { |a, b| b.comments.count <=> a.comments.count }).page(params[:page])
+    @articles_comment = Kaminari.paginate_array(Article.tagged_with(params[:tag_name].to_s).includes(:comments).sort { |a, b| b.comments.count <=> a.comments.count }).page(params[:page]) if params[:tag_name]
   end
 
   def show
