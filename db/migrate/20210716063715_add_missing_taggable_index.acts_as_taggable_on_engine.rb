@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from acts_as_taggable_on_engine (originally 4)
 if ActiveRecord.gem_version >= Gem::Version.new('5.0')
   class AddMissingTaggableIndex < ActiveRecord::Migration[4.2]; end
@@ -10,6 +12,6 @@ AddMissingTaggableIndex.class_eval do
   end
 
   def self.down
-    remove_index ActsAsTaggableOn.taggings_table, name: 'taggings_taggable_context_idx'
+    # remove_index ActsAsTaggableOn.taggings_table, name: 'taggings_taggable_context_idx'
   end
 end

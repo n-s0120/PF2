@@ -1,0 +1,28 @@
+記事編集画面
+
+<%= form_with model: @article, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :記事タイトル %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ページアドレス %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :記事紹介 %>
+    <%= f.text_area :introduction %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :タグ %>
+    <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
+    ※タグを複数つけたい場合は、「,」で区切ってください。
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "投稿" %>
+  </div>
+<% end %>

@@ -1,5 +1,11 @@
-<div class="page_name">Gyo_tetsu</div>
-  <div class="search_area">
+<div class="top">
+  <div class="row">
+    <div class="page-name col-xs-12">
+      Gyo_tetsu
+    </div>
+  </div>
+  <div class="row">
+    <div class="search_area col-xs-10">
       <%= form_with url: search_path, method: :get, local: true do |f| %>
         <%= f.label :フローチャート・オススメ記事検索 %>
         <br>
@@ -13,5 +19,6 @@
           <p>Gyo_tetsuとは、飲食業を始めたい方や車庫証明などの身近な手続きを自身で手続きをするために必要な情報を集約したサイトになります。</p>
         </div>
       <% end %>
+    </div>
   </div>
 </div>

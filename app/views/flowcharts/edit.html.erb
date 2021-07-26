@@ -1,0 +1,21 @@
+<%= form_with model: @flowchart, local: true do |f| %>
+  <div class="form_group">
+    <%= f.label :記事タイトル %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :ジャンル %>
+    <%= f.select :genre, [["飲食業", "飲食業"], ["風営法", "風営法"], ["建設業法", "建設業法"], ["入管法", "入管法"], ["その他", "その他"]] %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :記事詳細 %>
+    <%= f.text_area :introduction, size: "100x10" %><br>
+    ※フローチャートに入れたい項目ごとに「→」で区切ってください。（例：書類作成→書類提出）
+    </div>
+
+  <div class="form_group">
+    <%= f.submit "変更を保存" %>
+  </div>
+<% end %>

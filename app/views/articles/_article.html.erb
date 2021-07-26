@@ -1,21 +1,21 @@
-  <tbody>
-    <tr id='article_<%= article.id %>'>
-      <td><%= article.user.name %></td>
-      <td><%= article.title %></td>
-      <td><%= article.introduction %></td>
-      <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
-      <td><%= article.comments.count %></td>
-      <% if user_signed_in? %>
-      <td>
-        <% if article.favorited_by?(current_user) %>
-          <%= link_to article_favorites_path(article), method: :delete, remote: true do %>♥<% end %>
-        <% else %>
-          <%= link_to article_favorites_path(article), method: :post, remote: true do %>♡<% end %>
-        <% end %>
-      </td>
+<tbody>
+  <tr id='article-<%= article.id %>'>
+    <td><%= article.user.name %></td>
+    <td><%= article.title %></td>
+    <td><%= article.introduction %></td>
+    <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
+    <td><%= article.comments.count %></td>
+    <% if user_signed_in? %>
+    <td>
+      <% if article.favorited_by?(current_user) %>
+        <%= link_to article_favorites_path(article), method: :delete, remote: true do %>♥<% end %>
+      <% else %>
+        <%= link_to article_favorites_path(article), method: :post, remote: true do %>♡<% end %>
       <% end %>
-      <td><%= article.favorites.count %></td>
-      <td><%= link_to "詳細", article_path(article) %></td>
-      <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-    </tr>
-  </tbody>
+    </td>
+    <% end %>
+    <td><%= article.favorites.count %></td>
+    <td><%= link_to "詳細", article_path(article) %></td>
+    <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+  </tr>
+</tbody>

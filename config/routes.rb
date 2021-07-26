@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  get 'articles/favorite_sort' => 'articles#index_favorite'
+  get 'articles/comment_sort' => 'articles#index_comment'
   devise_for :admins, controllers: {
     sessions: 'admins/sessions'
   }
@@ -6,8 +10,8 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get '/search' => 'searches#search'
   resources :articles do
-    resources :comments, only:[:create, :destroy]
-    resource :favorites, only:[:create, :destroy]
+    resources :comments, only: %i[create destroy]
+    resource :favorites, only: %i[create destroy]
   end
-  resources :flowcharts, only: [:new, :create, :show, :index, :destroy]
+  resources :flowcharts
 end

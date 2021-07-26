@@ -7,3 +7,6 @@
 <% end %>
 <!--flowchartのintroductionに入れた配列の最後のみ、矢印をなくすためにループを脱して、単体で表示させる-->
 <%= @flowchart_introductions[@flowchart_introductions.size - 1] %>
+
+<%= link_to "編集する", edit_flowchart_path(@flowchart) %>
+<%= link_to "削除する", flowchart_path, method: :delete %>

@@ -2,6 +2,12 @@
   <%= link_to "記事を投稿する", new_article_path %>
 <% end %>
 
+<br>
+
+<%= link_to "新着順", articles_path %>
+<%= link_to "いいね順", articles_favorite_sort_path %>
+<%= link_to "コメント数順", articles_comment_sort_path %>
+
 <table border="1">
   <thead>
     <tr>
@@ -19,7 +25,9 @@
     </tr>
   </thead>
 
-  <% @articles.each do |article| %>
+  <% @articles_new.each do |article| %>
     <%= render 'article', article: article %>
   <% end %>
 </table>
+
+<%= paginate @articles_new %>

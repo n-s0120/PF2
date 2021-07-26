@@ -1,3 +1,11 @@
+<% if @article.user == current_user %>
+  <%= link_to "編集する", edit_article_path %>
+<% end %>
+
+<% if @article.user == current_user %>
+  <%= link_to "削除する", article_path, method: :delete %>
+<% end %>
+
 オススメ記事詳細画面
 <br>
 
