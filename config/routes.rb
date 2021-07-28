@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: %i[create destroy]
     resource :favorites, only: %i[create destroy]
+    resource :reports, only: %i[create destroy]
   end
+  get 'reports' => 'reports#index'
   resources :flowcharts
 end

@@ -1,17 +1,24 @@
 <div class="header">
   <div class="botton">
-    <%= link_to "トップページ",  root_path %>
+    <p><%= link_to "トップページ",  root_path %></p>
   </div>
 
   <div class="botton">
-    <%= link_to "みんなのオススメ記事", articles_path %>
+    <p><%= link_to "みんなのオススメ記事", articles_path %></p>
   </div>
 
   <div class="botton">
-    <%= link_to "手続きフローチャート", flowcharts_path %>
+    <p><%= link_to "手続きフローチャート", flowcharts_path %></p>
   </div>
 
+  <% if admin_signed_in? %>
+    <div class="botton">
+      <p><%= link_to "通報記事一覧", reports_path %></p>
+    </div>
+  <% end %>
+
+
   <div class="botton">
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
   </div>
 </div>

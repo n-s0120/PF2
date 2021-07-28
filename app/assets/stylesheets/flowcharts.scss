@@ -4,7 +4,7 @@
   background-color: #222e3e;
   cursor: pointer;
   .tab {
-    width: 303px;
+    width: 308px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -25,7 +25,7 @@
     display: none;
   }
   .content.show {
-    margin-top: 50px;
+    margin-top: 30px;
     display: block;
   }
 }
@@ -36,7 +36,7 @@
   background-color: #222e3e;
   cursor: pointer;
   .tokyo_tab {
-    width: 303px;
+    width: 308px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -53,19 +53,66 @@
 .tokyo_content-area {
   font-size: 30px;
   text-align: center;
+  padding-bottom: 2px;
   .tokyo_content {
     display: none;
   }
   .tokyo_content.show {
-    margin-top: 50px;
+    margin-top: 30px;
     display: block;
   }
 }
 
 table {
-  width: 100%;
+  width: 95%;
+  margin: 20px auto;
 }
 
 .content.show td {
-  width: 25%;
+  width: 20%;
+}
+
+.flowchart_content {
+  background-image: image-url('bluetile');
+}
+
+table {
+  background-color: white;
+}
+
+.introduction {
+  display: inline-block;
+  text-align: center;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.flowchart-title:first-child {
+  padding-top: 20px;
+}
+
+.flowchart-chart {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction span {
+  margin: 10px;
+  font-size: 20px;
+  border: 2px solid #000066;
+  padding: 10px 10px;
+}
+
+.arrow {
+  font-size: 30px;
+  text-align: center;
 }

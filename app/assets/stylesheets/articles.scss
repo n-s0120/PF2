@@ -1,3 +1,55 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article_content {
+  background-image: image-url('whitetile');
+  padding-top: 2px;
+}
+
+.paging {
+  display: flex;
+  justify-content: center;
+}
+
+.comments {
+  margin: 10px;
+}
+
+.article_show {
+  text-align: center;
+}
+
+.show-title {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.article-contents {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.article-contents p {
+  text-decoration: underline;
+  margin-bottom: 0px;
+}
+
+.botton-area {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.comment-submit {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.article-submit {
+  margin: 38px;
+}
+
+.article-sort {
+  margin: 40px;
+}

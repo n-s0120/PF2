@@ -2,10 +2,10 @@
   <tbody>
     <td><%= comment.user.name %></td>
     <td><%= comment.comment %></td>
-    <td>
     <% if comment.user == current_user %>
-      <%= link_to "削除", article_comment_path(comment.article, comment), method: :delete %>
-    <% end %>
+    <td>
+      <%= link_to "削除", article_comment_path(comment.article, comment), class: 'btn btn-danger', method: :delete %>
     </td>
+    <% end %>
   </tbody>
 <% end %>

@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
 
 .header {
   display: flex;
@@ -24,19 +27,85 @@
 }
 
 .botton {
-  margin: 10px;
-  padding: 10px;
+  padding-right: 10px;
 }
 
-.page_name {
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
+.botton p {
+  display: inline-block;
+  border-radius: 5%;
+  font-size: 16pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 10px;
+  background: #ffffff;
+  color: #ffffff;
+  line-height: 1em;
+  border: 2px solid #000066;
+  margin-top: 60px;
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  border-top: 1px solid black;
-  padding-top: 30px;
+  border-top: 1px solid gray;
+  background-image: image-url('gray.jpg');
+  height: 100px;
+  width: 100%;
+}
+
+a {
+    text-decoration:none;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.text-black {
+  margin-right: 10px;
+}
+
+.admin-session {
+  display: inline-block;
+  margin: 20px 600px;
+  border: 2px solid #000066;
+  padding: 20px;
+}
+
+.admin-session-body {
+  background-image: image-url('whitetile.jpg');
+}
+
+.devise-session {
+  display: inline-block;
+  margin: 20px 600px;
+  border: 2px solid #000066;
+  padding: 20px;
+}
+
+.devise-session-body {
+  background-image: image-url('whitetile.jpg');
+}
+
+.devise-registration {
+  display: inline-block;
+  margin: 20px 600px;
+  border: 2px solid #000066;
+  padding: 20px;
+}
+
+.devise-registration-body {
+  background-image: image-url('whitetile.jpg');
+}
+
+.actions {
+  margin: 10px auto;
+}
+
+.field {
+  margin-bottom: 10px;
 }
