@@ -3,9 +3,9 @@
 ## サイト概要
 建設業の許可や、飲食業許可などの各行政手続きをフローチャート化し、自力で手続きを行えるように援助するサイトです。
 このサイトには、以下の機能が実装されています。
-* 行政手続きに必要なものがわかるフローチャート
-* ユーザーのオススメサイトをシェアできるインデックス機能
-* オススメサイトへのいいね機能、コメント機能
+* 行政手続きに必要なものがわかるフローチャート作成機能（管理者による作成）
+* ユーザーのオススメサイトを共有できるインデックス機能（ユーザーによる作成）
+* オススメ記事へのいいね機能、コメント機能
 
 ## サイトテーマ
 自力で行政手続きの準備ができるサイト
@@ -28,9 +28,6 @@ https://www.figma.com/file/wNRcjF4KkO97Luyto7NaEg/Gyo_tetsu?node-id=0%3A1
 
 ### テーブル定義書
 https://docs.google.com/spreadsheets/d/1fc9g6Q4zrKZzztOAh1XsLZYVp_JDSjiO/edit#gid=1965684060
-
-### ER図
-
 
 ### チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ETadHJ-hbh0SYaI4jMynvEF49yyQHD3Xrs7lPvmXrqM/edit?usp=sharing
