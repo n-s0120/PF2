@@ -4,7 +4,7 @@
   background-color: #222e3e;
   cursor: pointer;
   .tab {
-    width: 303px;
+    width: 308px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -25,15 +25,104 @@
     display: none;
   }
   .content.show {
-    margin-top: 50px;
+    margin-top: 30px;
+    display: block;
+  }
+}
+
+.tokyo_tab-area {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222e3e;
+  cursor: pointer;
+  .tokyo_tab {
+    width: 308px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    border-right: 1px solid #50637b;
+    border-left: 1px solid #222e3e;
+  }
+  .tokyo_tab.tokyo_active {
+    background-color: #ccc;
+    color: #222e3e;
+    border: none;
+  }
+}
+.tokyo_content-area {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 2px;
+  .tokyo_content {
+    display: none;
+  }
+  .tokyo_content.show {
+    margin-top: 30px;
     display: block;
   }
 }
 
 table {
-  width: 100%;
+  width: 95%;
+  margin: 20px auto;
 }
 
-.contet.show td {
-  width: 25%;
+.content.show td {
+  width: 20%;
+}
+
+.flowchart_content {
+  background-image: image-url('bluetile');
+}
+
+table {
+  background-color: white;
+}
+
+.introduction {
+  display: inline-block;
+  text-align: center;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.flowchart-title:first-child {
+  padding-top: 20px;
+}
+
+.flowchart-chart {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction span {
+  margin: 10px;
+  font-size: 20px;
+  border: 2px solid #000066;
+  padding: 10px 10px;
+}
+
+.arrow {
+  font-size: 30px;
+  text-align: center;
+}
+
+.flowchart-content {
+  background-image: image-url('pinktile.jpg');
+  padding-bottom: 1px;
+}
+
+.flowchart-edit {
+  padding: 20px;
+  text-align: center;
 }

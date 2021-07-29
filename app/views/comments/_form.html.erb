@@ -1,4 +1,8 @@
 <%= form_with(model:[article, comment]) do |f| %>
-  <%= f.text_area :comment, rows:5, placeholder: "記事への感想を入力してください" %>
-  <%= f.submit "コメントする" %>
+  <div class="form">
+    <%= f.text_area :comment, rows: "5", cols: "80", placeholder: "このフォームに入力すると、記事への感想をコメントできます。" %>
+  </div>
+  <div class="comment-submit">
+    <%= f.submit "コメントする", class: 'btn btn-success' %>
+  </div>
 <% end %>

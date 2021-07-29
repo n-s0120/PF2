@@ -1,3 +1,11 @@
 <% tag_list.each do |tag| %>
-  <%= link_to tag, articles_path(tag_name: tag), class: "text-white" %>
+  <% if request.path == "/articles" %>
+    <%= link_to tag, articles_path(tag_name: tag), class: "text-black" %>
+  <% elsif request.path == "/articles/favorite_sort" %>
+    <%= link_to tag, articles_favorite_sort_path(tag_name: tag), class: "text-black" %>
+  <% elsif request.path == "/articles/comment_sort" %>
+    <%= link_to tag, articles_comment_sort_path(tag_name: tag), class: "text-black" %>
+  <% else %>
+    <%= link_to tag, articles_path(tag_name: tag), class: "text-black" %>
+  <% end %>
 <% end %>

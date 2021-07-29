@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   def new
     @article = Article.new
@@ -11,11 +13,19 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
-    #tagを押したとき、同じタグが付いているもののみを表示
-    if params[:tag_name]
-      @articles = Article.tagged_with("#{params[:tag_name]}")
-    end
+    @articles_new = Article.all.order(created_at: :desc).page(params[:page])
+    # tagを押したとき、同じタグが付いているもののみを表示
+    @articles_new = Article.tagged_with(params[:tag_name].to_s).page(params[:page]) if params[:tag_name]
+  end
+
+  def index_favorite
+    @articles_favorite = Kaminari.paginate_array(Article.includes(:favorites).sort { |a, b| b.favorites.count <=> a.favorites.count }).page(params[:page])
+    @articles_favorite = Kaminari.paginate_array(Article.tagged_with(params[:tag_name].to_s).includes(:favorites).sort { |a, b| b.favorites.count <=> a.favorites.count }).page(params[:page]) if params[:tag_name]
+  end
+
+  def index_comment
+    @articles_comment = Kaminari.paginate_array(Article.includes(:comments).sort { |a, b| b.comments.count <=> a.comments.count }).page(params[:page])
+    @articles_comment = Kaminari.paginate_array(Article.tagged_with(params[:tag_name].to_s).includes(:comments).sort { |a, b| b.comments.count <=> a.comments.count }).page(params[:page]) if params[:tag_name]
   end
 
   def show
@@ -24,21 +34,24 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def update
+    @article = Article.find(params[:id])
+    @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :introduction, :url, :tag_list)
-  end
-
-  def sort_params
-    params.permit(:sort)
   end
 end

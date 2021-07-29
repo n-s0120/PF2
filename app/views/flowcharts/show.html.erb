@@ -1,9 +1,27 @@
-<%= @flowchart.title %>
-<br>
-
-i = 0
-while i < flowchart.introduction.size
-puts flowchart.introduction[i]
-↓
-i += 1
-end
+<div class="flowchart-content">
+  <div class="flowchart-chart">
+    <!--flowchartで入力した文章を、フローチャート調にループ処理で表示させる-->
+    <% i = 0 %>
+    <% while i < @flowchart_introductions.size - 1 %>
+    <div class="introduction">
+      <span><%= @flowchart_introductions[i] %></span>
+    </div>
+    <div class="arrow">
+      <span>↓</span>
+    </div>
+      <% i += 1 %>
+    <% end %>
+    <!--flowchartのintroductionに入れた配列の最後のみ、矢印をなくすためにループを脱して、単体で表示させる-->
+    <div class="introduction">
+      <span><%= @flowchart_introductions[@flowchart_introductions.size - 1] %></span>
+    </div>
+  </div>
+  <div class="botton-area">
+    <div class="botton">
+      <%= link_to "編集する", edit_flowchart_path(@flowchart), class: 'btn btn-primary' %>
+    </div>
+    <div class="botton">
+      <%= link_to "削除する", flowchart_path, class: 'btn btn-danger', method: :delete %>
+    </div>
+  </div>
+</div>

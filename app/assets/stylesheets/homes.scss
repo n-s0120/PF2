@@ -1,12 +1,46 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.search_area {
+.top {
   background-image: image-url('procedure.jpg');
-  height: 960px;
+  height: 900px;
   background-size: cover;
-  padding-top: 40px;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.page-name {
+  text-align: center;
+}
+
+.page-name h1 {
+  font-size: 80px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,.2);
+}
+
+.search_area {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+.about h1 {
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 3px 3px 0 rgba(0,0,0,.2);
+}
+
+.about p {
+  text-align: left;
+  margin: 30px 250px;
+  font-size: 30px;
+  color: #00DD00;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.2);
+}
+
+.search_area span {
+  font-size: 25px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.2);
+  color: #0066FF;
 }

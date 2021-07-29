@@ -1,151 +1,222 @@
-<script src="assets/javascripts/flowchart.js"></script>
-<% if admin_signed_in? %>
-  <%= link_to "フローチャート追加", new_flowchart_path %>
-<% end %>
+<div class="flowchart_content">
+  <div class="flowchart-edit">
+    <% if admin_signed_in? %>
+      <%= link_to "フローチャート追加", new_flowchart_path, class: 'btn btn-info' %>
+    <% end %>
+  </div>
 
-<br>
-フローチャート一覧
+  <div class= "flowchart-title">
+    <h1>フローチャート一覧</h1>
+  </div>
 
-<div class="tab-area">
-  <div class="tab active">
-    飲食業
+  <!--タブ始め-->
+  <div class="tab-area">
+    <div class="tab active">
+      飲食業
+    </div>
+    <div class="tab">
+      風営法
+    </div>
+    <div class="tab">
+      建設業法
+    </div>
+    <div class="tab">
+      入管法
+    </div>
+    <div class="tab">
+      その他
+    </div>
   </div>
-  <div class="tab">
-    風営法
-  </div>
-  <div class="tab">
-    建設業法
-  </div>
-  <div class="tab">
-    入管法
-  </div>
-  <div class="tab">
-    その他
-  </div>
-</div>
-<div class="content-area">
-  <div class="content">
-    <%#<% link_to "#{@flowchart_1.title}", flowchart_path(flowchart) %>
-  </div>
-  <div class="content">
-    <%#<% link_to "#{@flowchart_2.title}", flowchart_path(flowchart) %>
-  </div>
-  <div class="content">
-    <%#<% link_to "#{@flowchart_3.title}", flowchart_path(flowchart) %>
-  </div>
-  <div class="content">
-    <%#<% link_to "#{@flowchart_4.title}", flowchart_path(flowchart) %>
-  </div>
-  <div class="content">
-    <%#<% link_to "#{@flowchart_5.title}", flowchart_path(flowchart) %>
-  </div>
-</div>
+  <!--タブ終わり-->
 
-東京都の各自治体ホームページ
-<div class="tab-area">
-  <div class="tab active">
-    飲食業
-  </div>
-  <div class="tab">
-    風営法
-  </div>
-  <div class="tab">
-    建設業法
-  </div>
- <div class="tab">
-    入管法
-  </div>
-  <div class="tab">
-    その他
-  </div>
-</div>
-<div class="content-area">
-  <div class="content show">
-    <table border="1">
-      <tbody>
-        <tr>
-          <td><a href= https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/eigyokyoka.html target="_blank" rel="noopener noreferrer">荒川区</a></td>
-          <td><a href= https://www.city.adachi.tokyo.jp/sekatsuese/fukushi-kenko/ese/shokuhinese-kyoka.html target="_blank" rel="noopener noreferrer">足立区</a></td>
-          <td><a href= https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/tebiki/1003840.html target="_blank" rel="noopener noreferrer">板橋区</a></td>
-          <td><a href= https://www.city.edogawa.tokyo.jp/e055/kuseijoho/denshi/download/kenko/d_kenkokanri/eigyoukyoka_sinsei.html target="_blank" rel="noopener noreferrer">江戸川区</a></td>
-        </tr>
-        <tr>
-          <td><a href= https://www.city.ota.tokyo.jp/smph/jigyousha/shokuhin/kyoka.html target="_blank" rel="noopener noreferrer">大田区</a></td>
-          <td><a href= https://www.city.katsushika.lg.jp/1000014/1007359/1007374/1007410/1007415.html target="_blank" rel="noopener noreferrer">葛飾区</a></td>
-          <td><a href= http://www.city.kita.tokyo.jp/seikatsueisei/kenko/ese/shokuhin/shinse/kyushoku/shokuhin.html target="_blank" rel="noopener noreferrer">北区</a></td>
-          <td><a href= https://www.city.koto.lg.jp/260404/fukushi/ese/shokuhin/6963.html target="_blank" rel="noopener noreferrer">江東区</a></td>
-        </tr>
-        <tr>
-          <td><a href= https://www.city.shinjuku.lg.jp/jigyo/file03_04_00001.html target="_blank" rel="noopener noreferrer">新宿区</a></td>
-          <td><a href= https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-eisei/kenkou-eisei-syokuhin/kenkou-eisei-syokuhin-eigyokyoka/kenkou-eisei-syokuhin-eigyokyoka-kyoka/hpg000018539.html target="_blank" rel="noopener noreferrer">品川区</a></td>
-          <td><a href= https://www.city.shibuya.tokyo.jp/jigyosha/eisei/shokuhin/eigyokyoka.html target="_blank" rel="noopener noreferrer">渋谷区</a></td>
-          <td><a href= https://www.city.sumida.lg.jp/kenko_fukushi/eisei/syoku_eisei/jigyousya/eigyou_kyoka.html target="_blank" rel="noopener noreferrer">墨田区</a></td>
-        </tr>
-        <tr>
-          <td><a href= https://www.city.suginami.tokyo.jp/guide/kenko/shokuhin/1004823.html target="_blank" rel="noopener noreferrer">杉並区</a></td>
-          <td><a href= https://www.city.setagaya.lg.jp/mokuji/fukushi/003/007/003/d00008550.html target="_blank" rel="noopener noreferrer">世田谷区</a></td>
-          <td><a href= https://www.city.taito.lg.jp/kenkohukusi/kenkokikikanrieisei/food/shokuhineigyo/index.html target="_blank" rel="noopener noreferrer">台東区</a></td>
-          <td><a href= https://www.city.chiyoda.lg.jp/koho/kurashi/shokuhin/tetsuzuki/egyokyoka.html target="_blank" rel="noopener noreferrer">千代田区</a></td>
-        </tr>
-        <tr>
-          <td><a href= https://www.city.chuo.lg.jp/smph/kenko/hokenzyo/syokuhineisei/kyokatetuduki.html target="_blank" rel="noopener noreferrer">中央区</a></td>
-          <td><a href= https://www.city.toshima.lg.jp/217/kurashi/ese/shokuhin/021278.html target="_blank" rel="noopener noreferrer">豊島区</a></td>
-          <td><a href= https://www.city.tokyo-nakano.lg.jp/dept/475000/d024406.html target="_blank" rel="noopener noreferrer">中野区</a></td>
-          <td><a href= https://www.city.nerima.tokyo.jp/hokenfukushi/eisei/about/eigyokyoka.html target="_blank" rel="noopener noreferrer">練馬区</a></td>
-        </tr>
-        <tr>
-          <td><a href= https://www.city.bunkyo.lg.jp/hoken/seikatsueisei/syokuhin/shinsei/kyokatou.html target="_blank" rel="noopener noreferrer">文京区</a></td>
-          <td><a href= https://www.city.minato.tokyo.jp/shokuhinkouiki/kuse/egyokyoka/tetsuzuki/shokuhin.html target="_blank" rel="noopener noreferrer">港区</a></td>
-          <td><a href= https://www.city.meguro.tokyo.jp/kurashi/hoken_eisei/kankeisha/shinkieigyou.html target="_blank" rel="noopener noreferrer">目黒区</a></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <!--タブ内の要素始め-->
   <div class="content-area">
     <div class="content show">
+      <!--飲食業のタブの中身-->
+      <!--飲食業のデータが入っていない場合には、テーブルの枠線を消す-->
+      <% if @flowchart_restaurant.any? %>
       <table border="1">
         <tbody>
           <tr>
-            <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/fuzoku/index.html target="_blank" rel="noopener noreferrer">警視庁</a></td>
+            <% @flowchart_restaurant.each do |flowchart_restaurant| %>
+              <td><%= link_to "#{flowchart_restaurant.title}", flowchart_path(flowchart_restaurant) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+    <div class="content">
+      <!--風営法のタブの中身-->
+      <% if @flowchart_amusement.any? %>
+      <table border="1">
+        <tbody>
+          <tr>
+            <% @flowchart_amusement.each do |flowchart_amusement| %>
+              <td><%= link_to "#{flowchart_amusement.title}", flowchart_path(flowchart_amusement) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+    <div class="content">
+      <!--建築業法のタブの中身-->
+      <% if @flowchart_construction.any? %>
+      <table border="1">
+        <tbody>
+          <tr>
+            <% @flowchart_construction.each do |flowchart_construction| %>
+              <td><%= link_to "#{flowchart_construction.title}", flowchart_path(flowchart_construction) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+    <div class="content">
+      <!--入管法のタブの中身-->
+      <% if @flowchart_immigration.any? %>
+      <table border="1">
+        <tbody>
+          <tr>
+            <% @flowchart_immigration.each do |flowchart_immigration| %>
+              <td><%= link_to "#{flowchart_immigration.title}", flowchart_path(flowchart_immigration) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+    <div class="content">
+      <!--その他のタブの中身-->
+      <% if @flowchart_other.any? %>
+      <table border="1">
+        <tbody>
+          <tr>
+            <% @flowchart_other.each do |flowchart_other| %>
+              <td><%= link_to "#{flowchart_other.title}", flowchart_path(flowchart_other) %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+  <!--タブ内の要素終わり-->
+
+  <!--行政機関のタブエリア始め-->
+  <div class="flowchart-title">
+    <h1>東京都 各行政機関のホームページ</h1>
+  </div>
+  <div class="tokyo_tab-area">
+    <div class="tokyo_tab tokyo_active">
+      飲食業
+    </div>
+    <div class="tokyo_tab">
+      風営法
+    </div>
+    <div class="tokyo_tab">
+      建設業法
+    </div>
+   <div class="tokyo_tab">
+      入管法
+    </div>
+    <div class="tokyo_tab">
+      その他
+    </div>
+  </div>
+  <!--行政機関のタブエリア終わり-->
+  <!--行政機関のタブ要素始め-->
+  <div class="tokyo_content-area">
+    <div class="tokyo_content show">
+      <table border="1">
+        <tbody>
+          <tr>
+            <td><a href= https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/eigyokyoka.html target="_blank" rel="noopener noreferrer">荒川区</a></td>
+            <td><a href= https://www.city.adachi.tokyo.jp/sekatsuese/fukushi-kenko/ese/shokuhinese-kyoka.html target="_blank" rel="noopener noreferrer">足立区</a></td>
+            <td><a href= https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/tebiki/1003840.html target="_blank" rel="noopener noreferrer">板橋区</a></td>
+            <td><a href= https://www.city.edogawa.tokyo.jp/e055/kuseijoho/denshi/download/kenko/d_kenkokanri/eigyoukyoka_sinsei.html target="_blank" rel="noopener noreferrer">江戸川区</a></td>
+          </tr>
+          <tr>
+            <td><a href= https://www.city.ota.tokyo.jp/smph/jigyousha/shokuhin/kyoka.html target="_blank" rel="noopener noreferrer">大田区</a></td>
+            <td><a href= https://www.city.katsushika.lg.jp/1000014/1007359/1007374/1007410/1007415.html target="_blank" rel="noopener noreferrer">葛飾区</a></td>
+            <td><a href= http://www.city.kita.tokyo.jp/seikatsueisei/kenko/ese/shokuhin/shinse/kyushoku/shokuhin.html target="_blank" rel="noopener noreferrer">北区</a></td>
+            <td><a href= https://www.city.koto.lg.jp/260404/fukushi/ese/shokuhin/6963.html target="_blank" rel="noopener noreferrer">江東区</a></td>
+          </tr>
+          <tr>
+            <td><a href= https://www.city.shinjuku.lg.jp/jigyo/file03_04_00001.html target="_blank" rel="noopener noreferrer">新宿区</a></td>
+            <td><a href= https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-eisei/kenkou-eisei-syokuhin/kenkou-eisei-syokuhin-eigyokyoka/kenkou-eisei-syokuhin-eigyokyoka-kyoka/hpg000018539.html target="_blank" rel="noopener noreferrer">品川区</a></td>
+            <td><a href= https://www.city.shibuya.tokyo.jp/jigyosha/eisei/shokuhin/eigyokyoka.html target="_blank" rel="noopener noreferrer">渋谷区</a></td>
+            <td><a href= https://www.city.sumida.lg.jp/kenko_fukushi/eisei/syoku_eisei/jigyousya/eigyou_kyoka.html target="_blank" rel="noopener noreferrer">墨田区</a></td>
+          </tr>
+          <tr>
+            <td><a href= https://www.city.suginami.tokyo.jp/guide/kenko/shokuhin/1004823.html target="_blank" rel="noopener noreferrer">杉並区</a></td>
+            <td><a href= https://www.city.setagaya.lg.jp/mokuji/fukushi/003/007/003/d00008550.html target="_blank" rel="noopener noreferrer">世田谷区</a></td>
+            <td><a href= https://www.city.taito.lg.jp/kenkohukusi/kenkokikikanrieisei/food/shokuhineigyo/index.html target="_blank" rel="noopener noreferrer">台東区</a></td>
+            <td><a href= https://www.city.chiyoda.lg.jp/koho/kurashi/shokuhin/tetsuzuki/egyokyoka.html target="_blank" rel="noopener noreferrer">千代田区</a></td>
+          </tr>
+          <tr>
+            <td><a href= https://www.city.chuo.lg.jp/smph/kenko/hokenzyo/syokuhineisei/kyokatetuduki.html target="_blank" rel="noopener noreferrer">中央区</a></td>
+            <td><a href= https://www.city.toshima.lg.jp/217/kurashi/ese/shokuhin/021278.html target="_blank" rel="noopener noreferrer">豊島区</a></td>
+            <td><a href= https://www.city.tokyo-nakano.lg.jp/dept/475000/d024406.html target="_blank" rel="noopener noreferrer">中野区</a></td>
+            <td><a href= https://www.city.nerima.tokyo.jp/hokenfukushi/eisei/about/eigyokyoka.html target="_blank" rel="noopener noreferrer">練馬区</a></td>
+          </tr>
+          <tr>
+            <td><a href= https://www.city.bunkyo.lg.jp/hoken/seikatsueisei/syokuhin/shinsei/kyokatou.html target="_blank" rel="noopener noreferrer">文京区</a></td>
+            <td><a href= https://www.city.minato.tokyo.jp/shokuhinkouiki/kuse/egyokyoka/tetsuzuki/shokuhin.html target="_blank" rel="noopener noreferrer">港区</a></td>
+            <td><a href= https://www.city.meguro.tokyo.jp/kurashi/hoken_eisei/kankeisha/shinkieigyou.html target="_blank" rel="noopener noreferrer">目黒区</a></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="content-area">
-    <div class="content show">
-      <table border="1">
-        <tbody>
-          <tr>
-            <td><a href= https://www.toshiseibi.metro.tokyo.lg.jp/kenchiku/kensetsu/ target="_blank" rel="noopener noreferrer">東京都都市整備局</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="tokyo_content-area">
+      <div class="tokyo_content">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/fuzoku/index.html target="_blank" rel="noopener noreferrer">警視庁</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tokyo_content-area">
+      <div class="tokyo_content">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td><a href= https://www.toshiseibi.metro.tokyo.lg.jp/kenchiku/kensetsu/ target="_blank" rel="noopener noreferrer">東京都都市整備局</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tokyo_content-area">
+      <div class="tokyo_content">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td><a href= http://www.moj.go.jp/isa/applications/procedures/index.html target="_blank" rel="noopener noreferrer">出入国在留管理庁</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tokyo_content-area">
+      <div class="tokyo_content">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td><a href= https://www.maff.go.jp/j/nousin/noukei/totiriyo/nouchi_tenyo.html target="_blank" rel="noopener noreferrer">農地転用</a></td>
+              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kobutsu/tetsuzuki/kyoka.html target="_blank" rel="noopener noreferrer">古物商</a></td>
+              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kotsu/hokan/syako_tetsuzuki/jidousha_syomei.html target="_blank" rel="noopener noreferrer">車庫証明</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-  <div class="content-area">
-    <div class="content show">
-      <table border="1">
-        <tbody>
-          <tr>
-            <td><a href= http://www.moj.go.jp/isa/applications/procedures/index.html target="_blank" rel="noopener noreferrer">出入国在留管理庁</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="content-area">
-    <div class="content show">
-      <table border="1">
-        <tbody>
-          <tr>
-            <td><a href= https://www.maff.go.jp/j/nousin/noukei/totiriyo/nouchi_tenyo.html target="_blank" rel="noopener noreferrer">農地転用</a></td>
-            <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kobutsu/tetsuzuki/kyoka.html target="_blank" rel="noopener noreferrer">古物商</a></td>
-            <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kotsu/hokan/syako_tetsuzuki/jidousha_syomei.html target="_blank" rel="noopener noreferrer">車庫証明</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <!--行政機関のタブ要素終わり-->
 </div>

@@ -1,25 +1,39 @@
-<% if user_signed_in? %>
-  <%= link_to "記事を投稿する", new_article_path %>
-<% end %>
+<div class="article_content">
+  <div class="article-submit">
+    <% if user_signed_in? %>
+      <%= link_to "記事を投稿する", new_article_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>ユーザー名</th>
-      <th>記事タイトル</th>
-      <th>記事紹介文</th>
-      <th>タグ</th>
-      <th>コメント数</th>
-      <% if user_signed_in? %>
-      <th>いいね</th>
-      <% end %>
-      <th>いいね数</th>
-      <th>記事の詳細ページ</th>
-      <th>記事作成日時</th>
-    </tr>
-  </thead>
+  <div class="article-sort">
+    <%= link_to "新着順", articles_path, class: 'btn btn-info' %>
+    <%= link_to "いいね順", articles_favorite_sort_path, class: 'btn btn-info' %>
+    <%= link_to "コメント数順", articles_comment_sort_path, class: 'btn btn-info' %>
+  </div>
 
-  <% @articles.each do |article| %>
-    <%= render 'article', article: article %>
-  <% end %>
-</table>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ユーザー名</th>
+        <th>記事タイトル</th>
+        <th>記事紹介文</th>
+        <th>タグ</th>
+        <th>コメント数</th>
+        <% if user_signed_in? %>
+          <th>いいね</th>
+        <% end %>
+        <th>いいね数</th>
+        <th>記事の詳細ページ</th>
+        <th>記事作成日時</th>
+      </tr>
+    </thead>
+
+    <% @articles_new.each do |article| %>
+      <%= render 'article', article: article %>
+    <% end %>
+  </table>
+
+  <div class="paging">
+    <%= paginate @articles_new %>
+  </div>
+</div>

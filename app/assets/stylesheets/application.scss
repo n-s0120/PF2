@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid black;
+  background-image: image-url('street.jpg');
+  background-size: cover;
+  height: 160px;
+}
+
+.botton {
+  padding-right: 10px;
+}
+
+.botton p {
+  display: inline-block;
+  border-radius: 5%;
+  font-size: 16pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 10px;
+  background: #ffffff;
+  color: #ffffff;
+  line-height: 1em;
+  border: 2px solid #000066;
+  margin-top: 60px;
+}
+
+.footer-content {
+  border-top: 1px solid gray;
+  background-image: image-url('gray.jpg');
+  height: 100px;
+  width: 100%;
+}
+
+a {
+    text-decoration:none;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+.text-black {
+  margin-right: 10px;
+}
+
+.admin-session {
+  display: inline-block;
+  margin: 20px 560px;
+  border: 2px solid #000066;
+  padding: 20px 80px;
+}
+
+.admin-session-body {
+  background-image: image-url('greentile.jpg');
+}
+
+.devise-session {
+  display: inline-block;
+  margin: 20px 560px;
+  border: 2px solid #000066;
+  padding: 20px 80px;
+}
+
+.devise-session-body {
+  background-image: image-url('greentile.jpg');
+}
+
+.devise-registration {
+  display: inline-block;
+  margin: 20px 560px;
+  border: 2px solid #000066;
+  padding: 20px 80px;
+}
+
+.devise-registration-body {
+  background-image: image-url('greentile.jpg');
+}
+
+.actions {
+  margin: 10px auto;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.company {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.call {
+  text-align: center;
+}

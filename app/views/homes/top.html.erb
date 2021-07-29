@@ -1,17 +1,25 @@
-<div class="page_name">Gyo_tetsu</div>
-  <div class="search_area">
+<div class="top">
+  <div class="wrapper">
+    <div class="page-name">
+      <h1>Gyo_tetsu</h1>
+    </div>
+    <div class="search_area">
       <%= form_with url: search_path, method: :get, local: true do |f| %>
-        <%= f.label :フローチャート・オススメ記事検索 %>
+        <span><%= f.label :フローチャート・オススメ記事検索 %></span>
         <br>
-        <%= f.text_field 'search[value]'%>
-        <%= f.select 'search[model]', options_for_select({ "記事タイトル" => "article", "フローチャート名" => "flow" }) %>
+        <%= f.text_field 'search[value]', size: "50" %>
+        <%= f.select 'search[model]', options_for_select({ "記事タイトル" => "article", "フローチャート名" => "flowchart" }) %>
         <%= f.select 'search[how]', options_for_select({ "完全一致" => "match", "部分一致" => "partical"  }) %>
         <%= f.submit :"検索" %>
-
-        <div class="about">
-          <h1>Gyo_tetsuとは？</h1>
-          <p>Gyo_tetsuとは、飲食業を始めたい方や車庫証明などの身近な手続きを自身で手続きをするために必要な情報を集約したサイトになります。</p>
-        </div>
       <% end %>
+    </div>
+    <div class="about">
+      <h1>Gyo_tetsuとは？</h1>
+      <p>
+        Gyo_tetsuとは、飲食業を始めたい方や建設業を始めたい方などが、自身で手続きを行う際に、役に立つ情報を集約したサイトになります。<br>
+        <br>
+        行政書士への依頼をする前準備にも役に立つ情報をまとめておりますので、行政書士への依頼前にもぜひご覧ください。
+      </p>
+    </div>
   </div>
 </div>
