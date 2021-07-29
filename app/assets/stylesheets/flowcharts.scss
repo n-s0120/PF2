@@ -100,12 +100,13 @@ table {
 }
 
 .flowchart-chart {
-  padding: 50px 0;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
 }
 
 .introduction span {
+  display: inline-block;
   margin: 10px;
   font-size: 20px;
   border: 2px solid #000066;
@@ -125,4 +126,57 @@ table {
 .flowchart-edit {
   padding: 20px;
   text-align: center;
+  background-image: image-url('whitetile.jpg');
+}
+
+.flowchart-edit-title h1 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.flowchart-edit-content {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-edit .submit-form {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-edit-content form {
+  padding: 10px 50px 10px 50px;
+  margin-left: 50px;
+}
+
+.flowchart-new {
+  padding: 20px;
+  text-align: center;
+  background-image: image-url('whitetile.jpg');
+}
+
+.flowchart-new-title h1 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.flowchart-new-content {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-new .submit-form {
+  display: flex;
+  justify-content: center;
+}
+
+.flowchart-new-content form {
+  padding: 10px 50px 10px 50px;
+  margin-left: 40px;
+}
+
+.form_group {
+  margin-bottom: 30px;
 }
