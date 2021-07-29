@@ -1,28 +1,37 @@
-記事投稿画面
-
-<%= form_with model: @article, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :記事タイトル %>
-    <%= f.text_field :title %>
+<div class="article-new">
+  <div class="article-new-title">
+    <h1>記事投稿画面</h1>
   </div>
 
-  <div class="form-group">
-    <%= f.label :ページアドレス %>
-    <%= f.text_field :url %>
-  </div>
+  <div class="article-new-content">
+    <%= form_with model: @article, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :記事タイトル %>
+        <br>
+        <%= f.text_field :title %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :記事紹介 %>
-    <%= f.text_area :introduction %>
-  </div>
+      <div class="form-group">
+        <%= f.label :ページアドレス %>
+        <br>
+        <%= f.text_field :url %>
+      </div>
 
-  <div class="form-group">
-    <%= f.label :タグ %>
-    <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
-    ※タグを複数つけたい場合は、「,」で区切ってください。
-  </div>
+      <div class="form-group">
+        <%= f.label :記事紹介 %>
+        <br>
+        <%= f.text_area :introduction %>
+      </div>
 
-  <div class="form-group">
-    <%= f.submit "投稿" %>
+      <div class="form-group">
+        <%= f.label :タグ %> （※タグを複数つけたい場合は、「,」で区切ってください。）
+        <br>
+        <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "投稿", class: 'btn btn-success' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

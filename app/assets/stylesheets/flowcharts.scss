@@ -100,7 +100,7 @@ table {
 }
 
 .flowchart-chart {
-  margin: 50px;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
 }
@@ -114,5 +114,15 @@ table {
 
 .arrow {
   font-size: 30px;
+  text-align: center;
+}
+
+.flowchart-content {
+  background-image: image-url('pinktile.jpg');
+  padding-bottom: 1px;
+}
+
+.flowchart-edit {
+  padding: 20px;
   text-align: center;
 }

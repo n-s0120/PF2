@@ -44,9 +44,7 @@
   margin-top: 60px;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
+.footer-content {
   border-top: 1px solid gray;
   background-image: image-url('gray.jpg');
   height: 100px;
@@ -71,35 +69,35 @@ td {
 
 .admin-session {
   display: inline-block;
-  margin: 20px 600px;
+  margin: 20px 560px;
   border: 2px solid #000066;
-  padding: 20px;
+  padding: 20px 80px;
 }
 
 .admin-session-body {
-  background-image: image-url('whitetile.jpg');
+  background-image: image-url('greentile.jpg');
 }
 
 .devise-session {
   display: inline-block;
-  margin: 20px 600px;
+  margin: 20px 560px;
   border: 2px solid #000066;
-  padding: 20px;
+  padding: 20px 80px;
 }
 
 .devise-session-body {
-  background-image: image-url('whitetile.jpg');
+  background-image: image-url('greentile.jpg');
 }
 
 .devise-registration {
   display: inline-block;
-  margin: 20px 600px;
+  margin: 20px 560px;
   border: 2px solid #000066;
-  padding: 20px;
+  padding: 20px 80px;
 }
 
 .devise-registration-body {
-  background-image: image-url('whitetile.jpg');
+  background-image: image-url('greentile.jpg');
 }
 
 .actions {
@@ -108,4 +106,13 @@ td {
 
 .field {
   margin-bottom: 10px;
+}
+
+.company {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.call {
+  text-align: center;
 }

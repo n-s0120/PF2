@@ -1,7 +1,9 @@
 <div class="flowchart_content">
-  <% if admin_signed_in? %>
-    <%= link_to "フローチャート追加", new_flowchart_path %>
-  <% end %>
+  <div class="flowchart-edit">
+    <% if admin_signed_in? %>
+      <%= link_to "フローチャート追加", new_flowchart_path, class: 'btn btn-info' %>
+    <% end %>
+  </div>
 
   <div class= "flowchart-title">
     <h1>フローチャート一覧</h1>

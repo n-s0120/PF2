@@ -35,6 +35,10 @@
   margin-bottom: 0px;
 }
 
+.article-contents .span {
+  font-size: 100px;
+}
+
 .botton-area {
   display: flex;
   justify-content: center;
@@ -46,10 +50,80 @@
   margin-top: 10px;
 }
 
-.article-submit {
-  margin: 38px;
-}
-
 .article-sort {
   margin: 40px;
+}
+
+.show-content {
+  background-image: image-url('lightgreentile.jpg');
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.article-new-title h1 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.article-new-content {
+  display: flex;
+  justify-content: center;
+}
+
+.article-new .submit-form {
+  display: flex;
+  justify-content: center;
+}
+
+.article-new-content form {
+  padding: 10px 50px 10px 50px;
+  margin-left: 360px;
+}
+
+.form-group {
+  font-size: 20px;
+}
+
+.article-edit {
+  background-image: image-url('whitetile.jpg');
+  padding-top: 2px;
+}
+
+.article-edit-title h1 {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.article-edit-content {
+  display: flex;
+  justify-content: center;
+}
+
+.article-edit .submit-form {
+  display: flex;
+  justify-content: center;
+}
+
+.article-edit-content form {
+  padding: 10px 50px 10px 50px;
+  margin-left: 380px;
+}
+
+.article-new {
+  background-image: image-url('whitetile.jpg');
+  padding-top: 2px;
+}
+
+.article-new-content .form-group:last-child {
+  margin-left: 100px;
+}
+
+.article-edit-content .form-group:last-child {
+  margin-left: 100px;
+}
+
+.article-submit {
+  margin: 20px 0 20px 40px;
 }

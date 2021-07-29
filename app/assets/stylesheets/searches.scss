@@ -1,3 +1,17 @@
 // Place all the styles related to the searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-content {
+  background-image: image-url('yellowtile.jpg');
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.search-result {
+  margin: 30px 0;
+}
+
+.search-result h2 {
+  margin-left: 40px;
+}

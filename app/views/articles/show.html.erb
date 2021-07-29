@@ -1,82 +1,84 @@
-<div class="show-title">
-  <h1>オススメ記事詳細画面</h1>
-</div>
-
-<div class="row">
-  <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
-    <div class="article-show">
-
-      <div class="article-contents">
-        <p>記事タイトル</p>
-        <%= @article.title %>
-      </div>
-
-      <div class="article-contents">
-        <!--リンク先を新しいタブで開けるようにして、遷移先で元タブを書き換えられないようにする-->
-        <p>URL</p>
-        <a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%= @article.url %></a>
-      </div>
-
-      <div class="article-contents">
-        <p>記事の紹介文</p>
-        <%= @article.introduction %>
-      </div>
-
-      <div class="article-contents">
-        <p>タグ</p>
-        <p><%= render 'favorites/tag_list', tag_list: @article.tag_list %></p>
-      </div>
-    </div>
+<div class="show-content">
+  <div class="show-title">
+    <h1>オススメ記事詳細画面</h1>
   </div>
 
-  <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
-    <div class="comments-form">
-      <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
-    </div>
-  </div>
-</div>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
+      <div class="article-show">
 
-
-
-<div class="botton-area">
-  <div class="botton">
-    <% if @article.user == current_user %>
-      <%= link_to "編集する", edit_article_path, class: 'btn btn-primary' %>
-    <% end %>
-  </div>
-
-  <div class="botton">
-    <% if @article.user == current_user %>
-      <%= link_to "削除する",  article_path, class: 'btn btn-danger', method: :delete %>
-    <% elsif admin_signed_in? %>
-      <%= link_to "削除する", article_path, class: 'btn btn-danger', method: :delete %>
-    <% end %>
-  </div>
-
-  <% if @article.user != current_user %>
-    <div class="botton">
-      <% if current_user  %>
-        <div id="reports_buttons_<%= @article.id %>">
-           <%= render partial: 'reports/report', locals: { article: @article} %>
+        <div class="article-contents">
+          <p>記事タイトル</p>
+          <%= @article.title %>
         </div>
+
+        <div class="article-contents">
+          <!--リンク先を新しいタブで開けるようにして、遷移先で元タブを書き換えられないようにする-->
+          <p>URL</p>
+          <a href= <%= @article.url %> target="_blank" rel="noopener noreferrer"><%= @article.url %></a>
+        </div>
+
+        <div class="article-contents">
+          <p>記事の紹介文</p>
+          <%= @article.introduction %>
+        </div>
+
+        <div class="article-contents">
+          <p>タグ</p>
+          <p><%= render 'favorites/tag_list', tag_list: @article.tag_list %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
+      <div class="comments-form">
+        <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="botton-area">
+    <div class="botton">
+      <% if @article.user == current_user %>
+        <%= link_to "編集する", edit_article_path, class: 'btn btn-primary' %>
       <% end %>
     </div>
-  <% end %>
-</div>
 
-
-<div class="comments">
-  <table border="1">
-    <thead>
-      <th>ユーザー名</th>
-      <th>コメント</th>
+    <div class="botton">
       <% if @article.user == current_user %>
-        <th>削除ボタン</th>
+        <%= link_to "削除する",  article_path, class: 'btn btn-danger', method: :delete %>
+      <% elsif admin_signed_in? %>
+        <%= link_to "削除する", article_path, class: 'btn btn-danger', method: :delete %>
       <% end %>
-    </thead>
+    </div>
 
-      <div id="comments_area">
-        <%= render partial: 'comments/comment', locals: {article: @article} %>
+    <% if @article.user != current_user %>
+      <div class="botton">
+        <% if current_user  %>
+          <div id="reports_buttons_<%= @article.id %>">
+             <%= render partial: 'reports/report', locals: { article: @article} %>
+          </div>
+        <% end %>
       </div>
-  </table>
+    <% end %>
+  </div>
+
+
+  <div class="comments">
+    <table border="1">
+      <thead>
+        <th>ユーザー名</th>
+        <th>コメント</th>
+        <% if @article.user == current_user %>
+          <th>削除ボタン</th>
+        <% end %>
+      </thead>
+
+        <div id="comments_area">
+          <%= render partial: 'comments/comment', locals: {article: @article} %>
+        </div>
+    </table>
+  </div>
 </div>

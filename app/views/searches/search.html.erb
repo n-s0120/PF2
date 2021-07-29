@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="col-xs-12">
+<div class="search-content">
+  <div class="search-result">
     <% if @model == "article" %>
       <h2>オススメ記事 検索結果 '<%= @value %>'</h2>
       <table border="1">
@@ -9,11 +9,6 @@
                 <th>記事タイトル</th>
                 <th>記事紹介文</th>
                 <th>タグ</th>
-                <th>コメント数</th>
-                <% if user_signed_in? %>
-                <th>いいね</th>
-                <% end %>
-                <th>いいね数</th>
                 <th>記事の詳細ページ</th>
                 <th>記事作成日時</th>
               </tr>
@@ -25,41 +20,30 @@
                 <td><%= article.title %></td>
                 <td><%= article.introduction %></td>
                 <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
-                <td>コメント数</td>
-                <% if user_signed_in? %>
-                <td>
-                  <% if article.favorited_by?(current_user) %>
-                    <%= link_to article_favorites_path(article), method: :delete, remote: true do %>♥<% end %>
-                  <% else %>
-                    <%= link_to article_favorites_path(article), method: :post, remote: true do %>♡<% end %>
-                  <% end %>
-                </td>
-                <% end %>
-                <td><%= article.favorites.count %></td>
                 <td><%= link_to "詳細", article_path(article) %></td>
                 <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
               </tr>
           </tbody>
       <% end %>
-      </table>
+    </table>
     <% elsif @model == "flowchart" %>
-      <h2>フローチャート 検索結果 '<%= @value %>'</h2>
-      <table border="1">
-        <thead>
-            <tr>
-              <th>タイトル</th>
-            </tr>
-        </thead>
-        <% @datas.each do |flowchart| %>
-        <tbody>
-            <tr>
-              <th>
-                <%= link_to "#{flowchart.title}", flowchart_path(flowchart) %>
-              </th>
-            </tr>
-        </tbody>
-        <% end %>
+        <h2>フローチャート 検索結果 '<%= @value %>'</h2>
+        <table border="1">
+          <thead>
+              <tr>
+                <th>タイトル</th>
+              </tr>
+          </thead>
+          <% @datas.each do |flowchart| %>
+          <tbody>
+              <tr>
+                <th>
+                  <%= link_to "#{flowchart.title}", flowchart_path(flowchart) %>
+                </th>
+              </tr>
+          </tbody>
+          <% end %>
     <% end %>
-      </table>
+    </table>
   </div>
 </div>
