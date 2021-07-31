@@ -30,10 +30,15 @@
       </div>
     </div>
 
+
     <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
-      <div class="comments-form">
-        <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="comments-form">
+          <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
+        </div>
+      <% else %>
+        <h2>ログインをするとコメントが<br>できるようになります。</h2>
+      <% end %>
     </div>
   </div>
 
