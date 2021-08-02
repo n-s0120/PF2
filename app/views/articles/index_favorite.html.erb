@@ -28,9 +28,8 @@
       </tr>
     </thead>
 
-    <% @articles_favorite.each do |article| %>
-      <%= render 'article', article: article %>
-    <% end %>
+    <!--each文のリファクタリング-->
+    <%= render partial: 'article', collection: @articles_favorite, as: :article %>
   </table>
 
   <div class="paging">

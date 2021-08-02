@@ -27,10 +27,8 @@
         <th>記事作成日時</th>
       </tr>
     </thead>
-
-    <% @articles_new.each do |article| %>
-      <%= render 'article', article: article %>
-    <% end %>
+    <!--each文のリファクタリング-->
+    <%= render partial: 'article', collection: @articles_new, as: :article %>
   </table>
 
   <div class="paging">

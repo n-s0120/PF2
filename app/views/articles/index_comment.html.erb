@@ -28,9 +28,8 @@
       </tr>
     </thead>
 
-    <% @articles_comment.each do |article| %>
-      <%= render 'article', article: article %>
-    <% end %>
+    <!--each文のリファクタリング-->
+    <%= render partial: 'article', collection: @articles_comment, as: :article %>
   </table>
 
   <div class="paging">
