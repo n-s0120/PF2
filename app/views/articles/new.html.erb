@@ -26,6 +26,7 @@
       <div class="form-group">
         <%= f.label :タグ %> （※タグを複数つけたい場合は、「,」で区切ってください。）
         <br>
+        <!--join(',')の指定をして、「,」で区切ればタグになるように指定-->
         <%= f.text_field :tag_list, value: @article.tag_list.join(',') %>
       </div>
 
