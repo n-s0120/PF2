@@ -28,7 +28,7 @@ class FlowchartsController < ApplicationController
 
   def show
     @flowchart = Flowchart.find(params[:id])
-    # @flowchartでflowchartのデータを探し出し、そのうちのintroductionカラムを"→"の部分で分割し、配列化して取得する
+    # @flowchartでflowchartのデータを探し出し、そのうちのintroductionカラムを","の部分で分割し、配列化して取得する
     @flowchart_introductions = @flowchart[:introduction].split(',')
   end
 
