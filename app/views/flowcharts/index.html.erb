@@ -132,11 +132,30 @@
     <div class="tokyo_content show">
       <table border="1">
         <tbody>
-          <% @flowchart_restaurant_hp.each do |flowchart_restaurant_hp| %>
-            <tr>
-              <td><%= link_to "#{flowchart_restaurant_hp.title}", "#{flowchart_restaurant_hp.url}", target: :"_blank", rel: "noopener noreferrer" %></td>
-            </tr>
+          <% i = 0 %>
+          <% while i < @flowchart_restaurant_hp.size - 1 %>
+          <tr>
+            <!--[i+]のときに要素がない場合、エラーが出てしまうため、要素がない場合、空白を返す-->
+            <% if @flowchart_restaurant_hp[i].present? %>
+              <td><%= link_to "#{@flowchart_restaurant_hp[i].title}", "#{@flowchart_restaurant_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+            <% end %>
+            <% if @flowchart_restaurant_hp[i+1].present? %>
+              <td><%= link_to "#{@flowchart_restaurant_hp[i+1].title}", "#{@flowchart_restaurant_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+            <% end %>
+            <% if @flowchart_restaurant_hp[i+2].present? %>
+              <td><%= link_to "#{@flowchart_restaurant_hp[i+2].title}", "#{@flowchart_restaurant_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+            <% end %>
+            <% if @flowchart_restaurant_hp[i+3].present? %>
+              <td><%= link_to "#{@flowchart_restaurant_hp[i+3].title}", "#{@flowchart_restaurant_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+            <% end %>
+            <% i += 4 %>
+          </tr>
           <% end %>
+          <%#<% @flowchart_restaurant_hp.each do |flowchart_restaurant_hp| %>
+             <%# <td><%= link_to "#{flowchart_restaurant_hp.title}", "#{flowchart_restaurant_hp.url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+          <%#<% end %>
+          <!--<tr>-->
+          <!--  <td><a href= https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/eigyokyoka.html target="_blank" rel="noopener noreferrer">荒川区</a></td>-->
           <!--  <td><a href= https://www.city.adachi.tokyo.jp/sekatsuese/fukushi-kenko/ese/shokuhinese-kyoka.html target="_blank" rel="noopener noreferrer">足立区</a></td>-->
           <!--  <td><a href= https://www.city.itabashi.tokyo.jp/kenko/eisei/shokuhin/tebiki/1003840.html target="_blank" rel="noopener noreferrer">板橋区</a></td>-->
           <!--  <td><a href= https://www.city.edogawa.tokyo.jp/e055/kuseijoho/denshi/download/kenko/d_kenkokanri/eigyoukyoka_sinsei.html target="_blank" rel="noopener noreferrer">江戸川区</a></td>-->
