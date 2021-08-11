@@ -32,6 +32,7 @@
     <%= render partial: 'article', collection: @articles_favorite, as: :article %>
   </table>
 
+  <!--kaminariのページング-->
   <div class="paging">
     <%= paginate @articles_favorite %>
   </div>

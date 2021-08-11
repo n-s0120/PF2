@@ -1,10 +1,13 @@
+<!--記事のtd要素の部分テンプレート-->
 <tbody>
   <tr id='article_<%= article.id %>'>
     <td><%= article.user.name %></td>
     <td><%= article.title %></td>
     <td><%= article.introduction %></td>
+    <!--acts-as-taggable-onの部分テンプレート-->
     <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>
     <td><%= article.comments.count %></td>
+  　<!--ユーザーとしてサインしている場合にいいね機能を利用可能-->
     <% if user_signed_in? %>
     <td>
       <% if article.favorited_by?(current_user) %>
@@ -16,6 +19,7 @@
     <% end %>
     <td><%= article.favorites.count %></td>
     <td><%= link_to "詳細", article_path(article) %></td>
+    <!--日本時間に変更-->
     <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
   </tr>
 </tbody>
