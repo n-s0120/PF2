@@ -25,6 +25,7 @@
 
         <div class="article-contents">
           <p>タグ</p>
+          <!--記事に付けられたタグを表示-->
           <p><%= render 'favorites/tag_list', tag_list: @article.tag_list %></p>
         </div>
       </div>
@@ -32,6 +33,7 @@
 
 
     <div class="col-sm-6 col-md-6 d-flex align-items-center justify-content-center">
+      <!--ユーザーサインインしている場合にのみコメントができるように-->
       <% if user_signed_in? %>
         <div class="comments-form">
           <%= render partial: 'comments/form', locals: {comment: @comment_new, article: @article} %>
@@ -46,14 +48,16 @@
 
   <div class="botton-area">
     <div class="botton">
+      <!--ログイン中のユーザーが記事を投稿したユーザーである場合にのみ、編集ボタンを表示-->
       <% if @article.user == current_user %>
         <%= link_to "編集する", edit_article_path, class: 'btn btn-primary' %>
       <% end %>
     </div>
 
     <div class="botton">
+    <!--ログイン中のユーザーが記事を投稿したユーザーである場合、もしくは、管理者がログイン中である場合、削除ボタンを表示-->
       <% if @article.user == current_user %>
-        <%= link_to "削除する",  article_path, class: 'btn btn-danger', method: :delete %>
+        <%= link_to "削除する", article_path, class: 'btn btn-danger', method: :delete %>
       <% elsif admin_signed_in? %>
         <%= link_to "削除する", article_path, class: 'btn btn-danger', method: :delete %>
       <% end %>
@@ -62,6 +66,7 @@
     <% if @article.user != current_user %>
       <div class="botton">
         <% if current_user  %>
+        <!--ログイン中かつ、記事投稿者がログインユーザーでない場合、記事の通報が可能-->
           <div id="reports_buttons_<%= @article.id %>">
              <%= render partial: 'reports/report', locals: { article: @article} %>
           </div>
@@ -77,6 +82,7 @@
         <th>ユーザー名</th>
         <th>コメント</th>
         <% if @article.user == current_user %>
+        <!--記事投稿者がログイン中のユーザーである場合、テキストが表示-->
           <th>削除ボタン</th>
         <% end %>
       </thead>

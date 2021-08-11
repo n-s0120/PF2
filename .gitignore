@@ -24,3 +24,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/ImageMagick-7.0.11
