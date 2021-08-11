@@ -66,18 +66,15 @@
 table {
   width: 95%;
   margin: 20px auto;
+  background-color: white;
 }
 
-.content.show td {
+.tokyo_content.show td {
   width: 20%;
 }
 
 .flowchart_content {
   background-image: image-url('bluetile');
-}
-
-table {
-  background-color: white;
 }
 
 .introduction {
