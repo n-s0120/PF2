@@ -16,5 +16,6 @@ module GyoTetsu
 
     # 日本時間に変更
     config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
   end
 end

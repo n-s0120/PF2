@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      article:
+        title: 記事タイトル
+        url: ページアドレス
+        introduction: 記事紹介
