@@ -18,11 +18,23 @@
       </div>
 
       <div class="form_group">
+        <%= f.label :作成するページ %>
+        <br>
+        <%= f.select :part, [["フローチャート", "フローチャート"], ["ホームページ", "ホームページ"]] %>
+      </div>
+
+      <div class="form_group">
+        <%= f.label :ページアドレス %>
+        <br>
+        <%= f.text_area :url, size: "100x1" %>
+      </div>
+
+      <div class="form_group">
         <%= f.label :記事詳細 %>
         <br>
         <%= f.text_area :introduction, size: "100x10" %><br>
-        ※フローチャートに入れたい項目ごとに「,」で区切ってください。（例：書類作成,書類提出）
-        </div>
+        ※フローチャートに入れたい項目ごとに「,」で区切ってください。（例：書類作成→書類提出）
+      </div>
 
       <div class="form_group">
         <%= f.submit "投稿", class: 'btn btn-success' %>
