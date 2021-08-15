@@ -131,22 +131,46 @@
   <div class="tokyo_content-area">
     <div class="tokyo_content show">
       <table border="1">
+        <!--飲食業のタブ要素-->
         <tbody>
           <% i = 0 %>
-          <% while i < @flowchart_restaurant_hp.size - 1 %>
+          <% while i < @flowchart_restaurant_hp.size %>
           <tr>
-            <!--[i+]のときに要素がない場合、エラーが出てしまうため、要素がない場合、空白を返す-->
+            <!--[i+~]の要素がない場合、エラーが出てしまうため、要素がない場合には空白を返すように設定-->
             <% if @flowchart_restaurant_hp[i].present? %>
-              <td><%= link_to "#{@flowchart_restaurant_hp[i].title}", "#{@flowchart_restaurant_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+              <td>
+                <%= link_to "#{@flowchart_restaurant_hp[i].title}", "#{@flowchart_restaurant_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                <% if admin_signed_in? %>
+                  <%= link_to "編集する", flowchart_path(@flowchart_restaurant_hp[i]), class: 'btn btn-success'  %>
+                <% end %>
+              </td>
             <% end %>
+
             <% if @flowchart_restaurant_hp[i+1].present? %>
-              <td><%= link_to "#{@flowchart_restaurant_hp[i+1].title}", "#{@flowchart_restaurant_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+              <td>
+                <%= link_to "#{@flowchart_restaurant_hp[i+1].title}", "#{@flowchart_restaurant_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                <% if admin_signed_in? %>
+                  <%= link_to "編集する", flowchart_path(@flowchart_restaurant_hp[i+1]), class: 'btn btn-success'  %>
+                <% end %>
+              </td>
             <% end %>
+
             <% if @flowchart_restaurant_hp[i+2].present? %>
-              <td><%= link_to "#{@flowchart_restaurant_hp[i+2].title}", "#{@flowchart_restaurant_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+              <td>
+                <%= link_to "#{@flowchart_restaurant_hp[i+2].title}", "#{@flowchart_restaurant_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                <% if admin_signed_in? %>
+                  <%= link_to "編集する", flowchart_path(@flowchart_restaurant_hp[i+2]), class: 'btn btn-success'  %>
+                <% end %>
+              </td>
             <% end %>
+
             <% if @flowchart_restaurant_hp[i+3].present? %>
-              <td><%= link_to "#{@flowchart_restaurant_hp[i+3].title}", "#{@flowchart_restaurant_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %></td>
+              <td>
+                <%= link_to "#{@flowchart_restaurant_hp[i+3].title}", "#{@flowchart_restaurant_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                <% if admin_signed_in? %>
+                  <%= link_to "編集する", flowchart_path(@flowchart_restaurant_hp[i+3]), class: 'btn btn-success'  %>
+                <% end %>
+              </td>
             <% end %>
             <% i += 4 %>
           </tr>
@@ -196,10 +220,53 @@
     <div class="tokyo_content-area">
       <div class="tokyo_content">
         <table border="1">
+          <!--風営法のタブ-->
           <tbody>
+            <% i = 0 %>
+            <% while i < @flowchart_amusement_hp.size %>
             <tr>
-              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/fuzoku/index.html target="_blank" rel="noopener noreferrer">警視庁</a></td>
+              <!--[i+~]の要素がない場合、エラーが出てしまうため、要素がない場合には空白を返すように設定-->
+              <% if @flowchart_amusement_hp[i].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_amusement_hp[i].title}", "#{@flowchart_amusement_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_amusement_hp[i]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_amusement_hp[i+1].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_amusement_hp[i+1].title}", "#{@flowchart_amusement_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_amusement_hp[i+1]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_amusement_hp[i+2].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_amusement_hp[i+2].title}", "#{@flowchart_amusement_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_amusement_hp[i+2]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_amusement_hp[i+3].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_amusement_hp[i+3].title}", "#{@flowchart_amusement_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_amusement_hp[i+3]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+              <% i += 4 %>
             </tr>
+            <% end %>
+            <!--<tr>-->
+            <!--  <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/fuzoku/index.html target="_blank" rel="noopener noreferrer">警視庁</a></td>-->
+            <!--</tr>-->
           </tbody>
         </table>
       </div>
@@ -207,10 +274,53 @@
     <div class="tokyo_content-area">
       <div class="tokyo_content">
         <table border="1">
+          <!--建設業法のタブエリア-->
           <tbody>
+            <% i = 0 %>
+            <% while i < @flowchart_construction_hp.size %>
             <tr>
-              <td><a href= https://www.toshiseibi.metro.tokyo.lg.jp/kenchiku/kensetsu/ target="_blank" rel="noopener noreferrer">東京都都市整備局</a></td>
+              <!--[i+~]の要素がない場合、エラーが出てしまうため、要素がない場合には空白を返すように設定-->
+              <% if @flowchart_construction_hp[i].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_construction_hp[i].title}", "#{@flowchart_construction_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_construction_hp[i]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_construction_hp[i+1].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_construction_hp[i+1].title}", "#{@flowchart_construction_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_construction_hp[i+1]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_construction_hp[i+2].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_construction_hp[i+2].title}", "#{@flowchart_construction_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_construction_hp[i+2]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_construction_hp[i+3].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_construction_hp[i+3].title}", "#{@flowchart_construction_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_construction_hp[i+3]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+              <% i += 4 %>
             </tr>
+            <% end %>
+            <!--<tr>-->
+            <!--  <td><a href= https://www.toshiseibi.metro.tokyo.lg.jp/kenchiku/kensetsu/ target="_blank" rel="noopener noreferrer">東京都都市整備局</a></td>-->
+            <!--</tr>-->
           </tbody>
         </table>
       </div>
@@ -218,10 +328,53 @@
     <div class="tokyo_content-area">
       <div class="tokyo_content">
         <table border="1">
+          <!--入管法のタブエリア-->
           <tbody>
+            <% i = 0 %>
+            <% while i < @flowchart_immigration_hp.size %>
             <tr>
-              <td><a href= http://www.moj.go.jp/isa/applications/procedures/index.html target="_blank" rel="noopener noreferrer">出入国在留管理庁</a></td>
+              <!--[i+~]の要素がない場合、エラーが出てしまうため、要素がない場合には空白を返すように設定-->
+              <% if @flowchart_immigration_hp[i].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_immigration_hp[i].title}", "#{@flowchart_immigration_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_immigration_hp[i]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_immigration_hp[i+1].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_immigration_hp[i+1].title}", "#{@flowchart_immigration_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_immigration_hp[i+1]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_immigration_hp[i+2].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_immigration_hp[i+2].title}", "#{@flowchart_immigration_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_immigration_hp[i+2]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_immigration_hp[i+3].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_immigration_hp[i+3].title}", "#{@flowchart_immigration_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_immigration_hp[i+3]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+              <% i += 4 %>
             </tr>
+            <% end %>
+            <!--<tr>-->
+            <!--  <td><a href= http://www.moj.go.jp/isa/applications/procedures/index.html target="_blank" rel="noopener noreferrer">出入国在留管理庁</a></td>-->
+            <!--</tr>-->
           </tbody>
         </table>
       </div>
@@ -229,12 +382,55 @@
     <div class="tokyo_content-area">
       <div class="tokyo_content">
         <table border="1">
+          <!--その他のタブエリア-->
           <tbody>
+            <% i = 0 %>
+            <% while i < @flowchart_other_hp.size %>
             <tr>
-              <td><a href= https://www.maff.go.jp/j/nousin/noukei/totiriyo/nouchi_tenyo.html target="_blank" rel="noopener noreferrer">農地転用</a></td>
-              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kobutsu/tetsuzuki/kyoka.html target="_blank" rel="noopener noreferrer">古物商</a></td>
-              <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kotsu/hokan/syako_tetsuzuki/jidousha_syomei.html target="_blank" rel="noopener noreferrer">車庫証明</a></td>
+              <!--[i+~]の要素がない場合、エラーが出てしまうため、要素がない場合には空白を返すように設定-->
+              <% if @flowchart_other_hp[i].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_other_hp[i].title}", "#{@flowchart_other_hp[i].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_other_hp[i]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_other_hp[i+1].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_other_hp[i+1].title}", "#{@flowchart_other_hp[i+1].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_other_hp[i+1]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_other_hp[i+2].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_other_hp[i+2].title}", "#{@flowchart_other_hp[i+2].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_other_hp[i+2]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+
+              <% if @flowchart_other_hp[i+3].present? %>
+                <td>
+                  <%= link_to "#{@flowchart_other_hp[i+3].title}", "#{@flowchart_other_hp[i+3].url}", target: :"_blank", rel: "noopener noreferrer" %>
+                  <% if admin_signed_in? %>
+                    <%= link_to "編集する", flowchart_path(@flowchart_other_hp[i+3]), class: 'btn btn-success'  %>
+                  <% end %>
+                </td>
+              <% end %>
+              <% i += 4 %>
             </tr>
+            <% end %>
+            <!--<tr>-->
+            <!--  <td><a href= https://www.maff.go.jp/j/nousin/noukei/totiriyo/nouchi_tenyo.html target="_blank" rel="noopener noreferrer">農地転用</a></td>-->
+            <!--  <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kobutsu/tetsuzuki/kyoka.html target="_blank" rel="noopener noreferrer">古物商</a></td>-->
+            <!--  <td><a href= https://www.keishicho.metro.tokyo.jp/tetsuzuki/kotsu/hokan/syako_tetsuzuki/jidousha_syomei.html target="_blank" rel="noopener noreferrer">車庫証明</a></td>-->
+            <!--</tr>-->
           </tbody>
         </table>
       </div>
